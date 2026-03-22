@@ -221,7 +221,7 @@ jobs:
           create-new-comment: false
 
       - name: Upload coverage
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: apps/backend/coverage.xml
@@ -255,7 +255,7 @@ jobs:
           fi
 
       - name: Upload frontend coverage
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: apps/scout/coverage/cobertura-coverage.xml,apps/admin/coverage/cobertura-coverage.xml,apps/scout/coverage/*.xml,apps/admin/coverage/*.xml
