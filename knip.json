@@ -1,0 +1,7 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "project": ["apps/**/*.{ts,tsx}", "packages/**/*.{ts,tsx}"],
+  "entry": ["apps/scout/src/main.tsx", "apps/admin/src/main.tsx", "packages/ui/src/index.ts"],
+  "ignore": ["**/*.d.ts", "**/*.generated.ts", "e2e/**"],
+  "ignoreDependencies": ["@citadel/types"]
+}

@@ -1,0 +1,97 @@
+{
+  "name": "citadel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "現場報告管理システム (Citadel) モノレポ",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "dev:scout": "turbo run dev --filter=@citadel/scout",
+    "dev:admin": "turbo run dev --filter=@citadel/admin",
+    "build:scout": "turbo run build --filter=@citadel/scout",
+    "build:admin": "turbo run build --filter=@citadel/admin",
+    "start": "zx ./scripts/start-all.mjs",
+    "start:prod": "zx ./scripts/start-prod.mjs",
+    "stop": "zx ./scripts/stop-all.mjs",
+    "restart": "zx ./scripts/restart-all.mjs",
+    "status": "zx ./scripts/status.mjs",
+    "db:reset": "zx ./scripts/db-reset.mjs",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "zx ./scripts/db-migrate.mjs",
+    "test:backend": "node ./scripts/test-backend.mjs",
+    "ci:local": "node scripts/ci-wrapper-fast.mjs",
+    "ci:reset": "node scripts/ci-wrapper.mjs",
+    "lint:backend": "node scripts/lint-backend.js",
+    "fix:backend": "node scripts/lint-staged-ruff.js check --fix apps/backend && node scripts/lint-staged-ruff.js format apps/backend",
+    "fix:frontend": "turbo run lint -- --fix && prettier --write \"apps/**/*.{ts,tsx}\" \"packages/**/*.{ts,tsx}\"",
+    "fix": "pnpm fix:backend && pnpm fix:frontend",
+    "generate:types": "zx ./scripts/generate-types.mjs",
+    "generate:schema": "node scripts/generate-schema.mjs",
+    "generate:validation": "node scripts/generate-validation.mjs",
+    "demo:seed": "zx ./scripts/demo-seed.mjs",
+    "demo:clear": "zx ./scripts/demo-clear.mjs",
+    "demo:reset": "pnpm demo:clear && pnpm demo:seed",
+    "test:e2e": "pnpm --filter @citadel/types build && playwright test --workers=1",
+    "test:e2e:scout": "playwright test --project=scout",
+    "test:e2e:admin": "playwright test --project=admin --workers=1",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report",
+    "validate": "pnpm lint:backend && pnpm test:backend && pnpm test && pnpm build && pnpm generate:types && git diff --exit-code apps/backend/openapi.json packages/types/src/api.generated.ts && node scripts/generate-schema.mjs --check && node scripts/generate-validation.mjs --check && pnpm test:e2e",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@dagger.io/dagger": "^0.14.0",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^8.57.1",
+    "exceljs": "^4.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "turbo": "^2.8.12",
+    "wait-on": "^9.0.4",
+    "zx": "^8.8.5"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "serve-handler>minimatch": "3.1.4",
+      "@redocly/openapi-core>minimatch": "5.1.8",
+      "js-yaml": "4.1.1",
+      "serve>ajv": "8.18.0",
+      "@eslint/eslintrc>ajv": "6.14.0",
+      "eslint>ajv": "6.14.0",
+      "esbuild": "0.25.0",
+      "glob": "10.5.0",
+      "serialize-javascript": "7.0.3"
+    }
+  },
+  "lint-staged": {
+    "apps/scout/**/*.{ts,tsx}": [
+      "node scripts/lint-staged-eslint.js scout",
+      "prettier --write"
+    ],
+    "apps/admin/**/*.{ts,tsx}": [
+      "node scripts/lint-staged-eslint.js admin",
+      "prettier --write"
+    ],
+    "apps/backend/**/*.py": [
+      "node scripts/lint-staged-ruff.js check --fix",
+      "node scripts/lint-staged-ruff.js format"
+    ],
+    "packages/types/**/*.{ts,tsx}": [
+      "node scripts/lint-staged-eslint.js types",
+      "prettier --write"
+    ]
+  }
+}

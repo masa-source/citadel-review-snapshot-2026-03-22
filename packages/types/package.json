@@ -1,0 +1,40 @@
+{
+  "name": "@citadel/types",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Citadel 共有型定義",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "openapi-fetch": "^0.17.0",
+    "toposort": "^2.0.2",
+    "zod": "^3.25.76"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rimraf dist",
+    "lint": "echo 'No lint for types package'",
+    "test": "vitest run",
+    "generate": "npx openapi-typescript ../../apps/backend/openapi.json -o src/api.generated.ts",
+    "generate:export": "cd ../../apps/backend && python scripts/export_openapi.py && cd ../../packages/types && npm run generate"
+  },
+  "devDependencies": {
+    "@citadel/eslint-config": "workspace:*",
+    "@citadel/typescript-config": "workspace:*",
+    "@types/toposort": "^2.0.7",
+    "openapi-typescript": "^7.13.0",
+    "rimraf": "^5.0.10",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  }
+}

@@ -1,0 +1,406 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  # ============================================
+  # Change Detection
+  # ============================================
+  changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    outputs:
+      frontend: ${{ steps.filter.outputs.frontend }}
+      backend: ${{ steps.filter.outputs.backend }}
+      shared: ${{ steps.filter.outputs.shared }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            frontend:
+              - 'apps/admin/**'
+              - 'apps/scout/**'
+              - 'packages/ui/**'
+            backend:
+              - 'apps/backend/**'
+            shared:
+              - 'shared/**'
+              - 'packages/types/**'
+              - 'scripts/**'
+              - 'package.json'
+              - 'pnpm-lock.yaml'
+              - 'pnpm-workspace.yaml'
+              - 'turbo.json'
+              - '.github/workflows/ci.yml'
+              - '.github/actions/**'
+
+  # ============================================
+  # Static Analysis (Lint & Format)
+  # ============================================
+  static-analysis:
+    name: Static Analysis
+    needs: [changes]
+    # Always run to ensure quality, but Turborepo will handle incremental checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node/pnpm
+        uses: ./.github/actions/setup-node-pnpm
+
+      - name: Setup Python/venv
+        uses: ./.github/actions/setup-python-venv
+        with:
+          install-test-deps: "true"
+
+      - name: Frontend Lint (Turborepo)
+        run: |
+          if [ "${{ needs.changes.outputs.shared }}" == "true" ]; then
+            pnpm turbo run lint
+          else
+            pnpm turbo run lint --filter="...[origin/main]"
+          fi
+
+      - name: Frontend Format (Prettier)
+        run: pnpm exec prettier --check "apps/**/*.{ts,tsx}" "packages/**/*.{ts,tsx}"
+
+      - name: Backend Lint & Typecheck (ruff/pyright)
+        run: |
+          source venv/bin/activate
+          pnpm lint:backend
+
+  # ============================================
+  # Type Definition Sync Check
+  # ============================================
+  type-sync-check:
+    name: Type Sync Check
+    needs: [changes]
+    # Always run for safety when related files change
+    if: needs.changes.outputs.backend == 'true' || needs.changes.outputs.shared == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node/pnpm
+        uses: ./.github/actions/setup-node-pnpm
+
+      - name: Setup Python/venv
+        uses: ./.github/actions/setup-python-venv
+        with:
+          install-test-deps: "true"
+
+      - name: Check Validation Rules Sync
+        run: node scripts/generate-validation.mjs --check
+
+      - name: Check Schema Metadata Sync
+        run: node scripts/generate-schema.mjs --check
+
+      - name: Check OpenAPI Types Sync
+        run: |
+          pnpm generate:types
+          git diff --exit-code apps/backend/openapi.json packages/types/src/api.generated.ts
+
+  # ============================================
+  # Backend Tests (Python + PostgreSQL)
+  # ============================================
+  backend-test:
+    name: Backend Tests
+    needs: [changes]
+    if: needs.changes.outputs.backend == 'true' || needs.changes.outputs.shared == 'true'
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: citadel
+          POSTGRES_PASSWORD: citadel
+          POSTGRES_DB: citadel
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    defaults:
+      run:
+        working-directory: apps/backend
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node/pnpm
+        uses: ./.github/actions/setup-node-pnpm
+
+      - name: Setup Python/venv
+        uses: ./.github/actions/setup-python-venv
+        with:
+          install-test-deps: "true"
+
+      - name: Install Pytest Timeout
+        run: |
+          source ../../venv/bin/activate
+          pip install pytest-timeout
+
+      - name: Wait for PostgreSQL
+        run: |
+          pnpm exec wait-on tcp:localhost:5432 --timeout 30000
+
+      - name: Verify Database Migrations (Reversibility Test)
+        env:
+          DATABASE_URL: postgresql+asyncpg://citadel:citadel@localhost:5432/citadel
+        run: |
+          # 仮想環境の有効化（setup-python-venv で作成済み）
+          source ../../venv/bin/activate
+
+          echo "Checking migration status..."
+          python -m alembic current
+
+          echo "Step 1: Upgrade to head"
+          python -m alembic upgrade head
+
+          echo "Step 2: Downgrade -1 (Verify rollback capability)"
+          python -m alembic downgrade -1
+
+          echo "Step 3: Re-upgrade to head"
+          python -m alembic upgrade head
+
+          echo "Migration verification successful."
+
+      - name: Run Backend Tests (Normal cases)
+        env:
+          DATABASE_URL: postgresql+asyncpg://citadel:citadel@localhost:5432/citadel
+        run: |
+          source ../../venv/bin/activate
+          python -m pytest -ra --cov=services --cov=main --cov-report=xml -v -m "normal"
+
+      - name: Run Backend Tests (Error cases)
+        if: success() || failure()
+        env:
+          DATABASE_URL: postgresql+asyncpg://citadel:citadel@localhost:5432/citadel
+        run: |
+          # --cov-append を使用して前のステップの結果に合算
+          source ../../venv/bin/activate
+          python -m pytest -ra --cov=services --cov=main --cov-append --cov-report=xml -v -m "error"
+
+      - name: Run Backend Tests (Unmarked cases)
+        if: success() || failure()
+        env:
+          DATABASE_URL: postgresql+asyncpg://citadel:citadel@localhost:5432/citadel
+        run: |
+          source ../../venv/bin/activate
+          python -m pytest -ra --cov=services --cov=main --cov-append --cov-report=xml --cov-report=term-missing --cov-fail-under=70 -v -m "not normal and not error and not ai_eval"
+
+      - name: Pytest coverage comment
+        uses: MishaKav/pytest-coverage-comment@main
+        if: github.event_name == 'pull_request' && (success() || failure())
+        with:
+          pytest-xml-coverage-path: apps/backend/coverage.xml
+          title: Backend Coverage Report
+          badge-title: Coverage
+          hide-badge: false
+          hide-report: false
+          create-new-comment: false
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: apps/backend/coverage.xml
+          flags: backend
+          fail_ci_if_error: false
+
+  # ============================================
+  # Frontend Tests (Node.js + Vitest)
+  # ============================================
+  frontend-test:
+    name: Frontend Tests
+    needs: [changes]
+    if: needs.changes.outputs.frontend == 'true' || needs.changes.outputs.shared == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node/pnpm
+        uses: ./.github/actions/setup-node-pnpm
+
+      - name: Run tests with Turborepo
+        run: |
+          if [ "${{ needs.changes.outputs.shared }}" == "true" ]; then
+            pnpm turbo run test:coverage -- --run
+          else
+            pnpm turbo run test:coverage --filter="...[origin/main]" -- --run
+          fi
+
+      - name: Upload frontend coverage
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: apps/scout/coverage/cobertura-coverage.xml,apps/admin/coverage/cobertura-coverage.xml,apps/scout/coverage/*.xml,apps/admin/coverage/*.xml
+          flags: frontend
+          fail_ci_if_error: false
+
+  # ============================================
+  # E2E Tests (Playwright)
+  # ============================================
+  test-e2e:
+    name: E2E Tests
+    needs: [changes]
+    if: needs.changes.outputs.frontend == 'true' || needs.changes.outputs.backend == 'true' || needs.changes.outputs.shared == 'true'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: citadel
+          POSTGRES_PASSWORD: citadel
+          POSTGRES_DB: citadel
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node/pnpm
+        uses: ./.github/actions/setup-node-pnpm
+
+      - name: Setup Python/venv
+        uses: ./.github/actions/setup-python-venv
+
+      - name: Cache Playwright Browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install Playwright Browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm exec playwright install --with-deps
+
+      - name: Build Scout for E2E
+        run: pnpm turbo run build --filter="@citadel/scout..."
+
+      - name: Build Admin for E2E
+        run: pnpm turbo run build --filter="@citadel/admin..."
+
+      - name: Start Services for E2E
+        env:
+          DATABASE_URL: postgresql+asyncpg://citadel:citadel@localhost:5432/citadel
+          REQUIRE_API_KEY: "false"
+        run: |
+          # Start Backend
+          source venv/bin/activate
+          cd apps/backend
+          uvicorn main:app --port 8000 > backend_startup.log 2>&1 &
+          cd ../..
+
+          # Start Scout
+          pnpm --filter @citadel/scout start > scout_startup.log 2>&1 &
+
+          # Start Admin
+          pnpm --filter @citadel/admin start > admin_startup.log 2>&1 &
+
+          # Wait for ports
+          echo "Waiting for services to be ready..."
+          if ! pnpm exec wait-on -t 300000 tcp:8000 tcp:3000 tcp:3001; then
+            echo "Timeout occurred. Showing startup logs:"
+            echo "--- Backend Log ---"
+            cat apps/backend/backend_startup.log || true
+            echo "--- Scout Log ---"
+            cat scout_startup.log || true
+            echo "--- Admin Log ---"
+            cat admin_startup.log || true
+            exit 1
+          fi
+          sleep 10
+
+      - name: Run E2E tests
+        env:
+          DATABASE_URL: postgresql+asyncpg://citadel:citadel@localhost:5432/citadel
+          REQUIRE_API_KEY: "false"
+        run: pnpm test:e2e
+
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+      - name: Deploy Playwright report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./playwright-report
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+
+  # ============================================
+  # Build Check
+  # ============================================
+  build:
+    name: Build Check
+    needs: [changes]
+    if: always() && (needs.changes.outputs.frontend == 'true' || needs.changes.outputs.backend == 'true' || needs.changes.outputs.shared == 'true')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node/pnpm
+        uses: ./.github/actions/setup-node-pnpm
+
+      - name: Build all packages with Turborepo
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+        run: |
+          if [ "${{ needs.changes.outputs.shared }}" == "true" ]; then
+            pnpm build
+          else
+            pnpm turbo run build --filter="...[origin/main]"
+          fi

@@ -1,0 +1,46 @@
+name: "Setup Python and venv"
+description: "Sets up Python, creates venv, and handles caching"
+inputs:
+  python-version:
+    description: "Python version"
+    required: false
+    default: "3.11"
+  cache-dependency-path:
+    description: "Path to requirements file for caching"
+    required: false
+    default: "apps/backend/requirements.txt"
+  install-test-deps:
+    description: "Whether to install test dependencies"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: "pip"
+        cache-dependency-path: ${{ inputs.cache-dependency-path }}
+
+    - name: Create venv and install dependencies
+      shell: bash
+      run: |
+        # Always use the repository root for venv
+        REPO_ROOT=${{ github.workspace }}
+        cd "$REPO_ROOT"
+
+        # Create venv if not exists (though in CI it's usually clean)
+        python -m venv venv
+
+        # Determine the pip/python path inside venv
+        VENV_PYTHON="$REPO_ROOT/venv/bin/python"
+
+        # Install/upgrade within venv
+        "$VENV_PYTHON" -m pip install --upgrade pip
+        "$VENV_PYTHON" -m pip install -r ${{ inputs.cache-dependency-path }}
+
+        if [ "${{ inputs.install-test-deps }}" == "true" ]; then
+          "$VENV_PYTHON" -m pip install pytest pytest-asyncio pytest-cov httpx aiosqlite ruff pyright bandit pytest-xdist polyfactory "testcontainers[postgres]"
+        fi

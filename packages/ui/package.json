@@ -1,0 +1,62 @@
+{
+  "name": "@citadel/ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Citadel 共有UIコンポーネント（マスタテーブル・フォーム等）",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rimraf dist",
+    "lint": "echo 'No lint for ui package'",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.460.0",
+    "react-hook-form": "^7.71.2",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^2.6.1",
+    "zod": "^3.25.76"
+  },
+  "peerDependencies": {
+    "@citadel/monitoring": "workspace:*",
+    "@citadel/types": "workspace:*",
+    "@rjsf/utils": "^6",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@citadel/monitoring": "workspace:*",
+    "@citadel/types": "workspace:*",
+    "@citadel/typescript-config": "workspace:*",
+    "@rjsf/core": "^6.3.1",
+    "@rjsf/utils": "^6.3.1",
+    "@rjsf/validator-ajv8": "^6.3.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "jsdom": "^25.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rimraf": "^5.0.10",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9",
+    "zod-to-json-schema": "^3.25.1"
+  }
+}

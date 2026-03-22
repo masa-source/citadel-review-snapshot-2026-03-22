@@ -1,0 +1,32 @@
+{
+  "report": {
+    "reportType": { "maxLength": 100 },
+    "reportTitle": { "maxLength": 200, "required": true },
+    "controlNumber": { "maxLength": 50 }
+  },
+  "company": {
+    "name": { "maxLength": 100, "required": true },
+    "department": { "maxLength": 100 },
+    "postalCode": { "maxLength": 10 },
+    "address": { "maxLength": 300 },
+    "phone": { "maxLength": 20 },
+    "fax": { "maxLength": 20 },
+    "email": { "maxLength": 100 }
+  },
+  "worker": { "name": { "maxLength": 100, "required": true } },
+  "instrument": {
+    "name": { "maxLength": 100, "required": true },
+    "modelNumber": { "maxLength": 100 },
+    "maintenanceCycle": { "maxLength": 50 }
+  },
+  "part": { "name": { "maxLength": 100, "required": true }, "partNumber": { "maxLength": 100 } },
+  "schemaDefinition": { "targetEntity": { "maxLength": 100 }, "version": { "maxLength": 50 } },
+  "site": {
+    "name": { "maxLength": 200, "required": true },
+    "location": { "maxLength": 300 },
+    "description": { "maxLength": 1000 }
+  },
+  "targetInstrument": { "tagNumber": { "maxLength": 100 } },
+  "tableDefinition": { "name": { "maxLength": 100, "required": true } },
+  "targetInstrumentTable": { "roleKey": { "maxLength": 100 } }
+}

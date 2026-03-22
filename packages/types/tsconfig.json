@@ -1,0 +1,8 @@
+{
+  "extends": "@citadel/typescript-config/library.json",
+  "compilerOptions": {
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

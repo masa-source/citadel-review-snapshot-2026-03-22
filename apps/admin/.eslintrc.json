@@ -1,0 +1,18 @@
+{
+  "extends": ["@citadel/eslint-config/vite-react-import.js"],
+  "ignorePatterns": ["node_modules/**", "build/**"],
+  "settings": {
+    "import/resolver": {
+      "node": true,
+      "typescript": { "project": "./tsconfig.json" }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts", "src/**/*.tsx"],
+      "rules": {
+        "import/no-unresolved": ["error", { "ignore": ["^@citadel/"] }]
+      }
+    }
+  ]
+}

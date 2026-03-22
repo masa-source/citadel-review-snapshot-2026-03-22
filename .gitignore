@@ -1,0 +1,106 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+.turbo/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+venv_linux_corrupted/
+env/
+*.egg-info/
+.eggs/
+*.egg
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment (全サブディレクトリ対応)
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Production data (機密データ - AIエージェントから隠す)
+# 本番用テンプレート
+**/assets/template-local/
+**/assets/backup/
+# Docker Compose 本番用オーバーライド
+docker-compose.override.yml
+
+# Test & Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+.pytest_tmp/
+.ruff_cache/
+.vitest_cache/
+coverage/
+
+# Playwright
+playwright-report/
+playwright/.cache/
+test-results/
+
+# Excel Temporary files
+~$*.xlsx
+~$*.xls
+~$*.xlsm
+
+# E2E/test upload artifacts（納品テストが backend assets/template に保存するため afterAll で削除）
+**/e2e-upload-*.xlsx
+# その他テスト出力
+output_test.xlsx
+**/output_test.xlsx
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Databases
+*.db
+*.sqlite3
+alembic_temp.db
+
+# Temporary files
+*.tmp
+*.temp
+**/output_temp/
+# push/validate 時に何らかの処理で作成される空ファイル（原因未特定のため無視）
+apps/backend/file
+
+# PWA generated files (Scout: apps/scout/public/ 等)
+**/public/sw.js
+**/public/sw.js.map
+**/public/workbox-*.js
+**/public/workbox-*.js.map
+**/public/swe-worker-*.js
+**/public/*.js.map
+
+# Coverage reports
+coverage.xml
+
+# Repomix output
+repomix-output.xml
+.repomixignore
+
+# Excel
+Excelファイルの保管場所.lnk
+
+# Managed process PID files
+scripts/.pids/

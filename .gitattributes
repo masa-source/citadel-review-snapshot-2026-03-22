@@ -1,0 +1,6 @@
+# デフォルトで全テキストファイルを LF 改行にする
+* text=auto eol=lf
+
+# 型定義チェックで CI が generate 結果と diff するため、改行を LF に統一する
+apps/backend/openapi.json text eol=lf
+packages/types/src/api.generated.ts text eol=lf

@@ -1,0 +1,44 @@
+# Ignore everything by default
+**
+
+# Allow essential project configuration and structure
+!package.json
+!pnpm-lock.yaml
+!pnpm-workspace.yaml
+!.npmrc
+!.agent/
+!apps/
+!packages/
+!shared/
+!scripts/
+!docs/
+
+# Recursively ignore heavy or build-generated folders
+**/node_modules
+**/venv
+**/.next
+**/out
+**/dist
+**/build
+**/.turbo
+**/coverage
+**/playwright-report
+**/test-results
+**/.pytest_cache
+**/.ruff_cache
+**/__pycache__
+**/.pytest_tmp
+**/htmlcov
+
+# Ignore OS/IDE files
+**/.vscode
+**/.idea
+**/.DS_Store
+**/Thumbs.db
+
+# Ignore logs and temp files
+**/*.log
+**/temp_output.txt
+**/pnpm-debug.log
+**/.git
+**/.github

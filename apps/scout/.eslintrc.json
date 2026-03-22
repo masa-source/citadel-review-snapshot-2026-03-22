@@ -1,0 +1,4 @@
+{
+  "extends": ["@citadel/eslint-config/vite-react.js"],
+  "ignorePatterns": ["node_modules/**", "build/**"]
+}

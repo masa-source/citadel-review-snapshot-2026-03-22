@@ -1,0 +1,185 @@
+{
+  "companies": {
+    "isMaster": true,
+    "label": "Companies",
+    "dexieIndexes": "id",
+    "syncMetaExtras": {
+      "items_attr": "companies"
+    }
+  },
+  "workers": {
+    "isMaster": true,
+    "label": "Workers",
+    "dexieIndexes": "id, companyId",
+    "foreignKeys": { "companyId": "companies" },
+    "syncMetaExtras": {
+      "items_attr": "workers",
+      "parent_resolvers": [["companies", "company_id"]]
+    }
+  },
+  "instruments": {
+    "isMaster": true,
+    "label": "Instruments",
+    "dexieIndexes": "id, companyId",
+    "foreignKeys": { "companyId": "companies" },
+    "syncMetaExtras": {
+      "items_attr": "instruments",
+      "parent_resolvers": [["companies", "company_id"]]
+    }
+  },
+  "schemaDefinitions": {
+    "isMaster": true,
+    "label": "Schema Definitions",
+    "dexieIndexes": "id",
+    "syncMetaExtras": {
+      "items_attr": "schema_definitions"
+    }
+  },
+  "sites": {
+    "isMaster": true,
+    "label": "Sites",
+    "dexieIndexes": "id, companyId",
+    "foreignKeys": { "companyId": "companies" },
+    "syncMetaExtras": {
+      "items_attr": "sites",
+      "parent_resolvers": [["companies", "company_id"]]
+    }
+  },
+  "parts": {
+    "isMaster": true,
+    "label": "Parts",
+    "dexieIndexes": "id, companyId",
+    "foreignKeys": { "companyId": "companies" },
+    "syncMetaExtras": {
+      "items_attr": "parts",
+      "parent_resolvers": [["companies", "company_id"]]
+    }
+  },
+  "ownedInstruments": {
+    "isMaster": true,
+    "label": "Owned Instruments",
+    "dexieIndexes": "id, companyId, instrumentId",
+    "foreignKeys": { "companyId": "companies", "instrumentId": "instruments" },
+    "syncMetaExtras": {
+      "items_attr": "owned_instruments",
+      "parent_resolvers": [
+        ["companies", "company_id"],
+        ["instruments", "instrument_id"]
+      ]
+    }
+  },
+  "tableDefinitions": {
+    "isMaster": true,
+    "label": "Table Definitions",
+    "dexieIndexes": "id",
+    "syncMetaExtras": {
+      "items_attr": "table_definitions"
+    }
+  },
+  "reportFormats": {
+    "isMaster": true,
+    "label": "Report Formats",
+    "dexieIndexes": "id",
+    "syncMetaExtras": {
+      "items_attr": "report_formats"
+    }
+  },
+  "reports": {
+    "isMaster": false,
+    "label": "Reports",
+    "dexieIndexes": "id, companyId, schemaId, controlNumber",
+    "foreignKeys": {
+      "companyId": "companies",
+      "schemaId": "schemaDefinitions",
+      "reportFormatId": "reportFormats"
+    },
+    "syncMetaExtras": {
+      "items_attr": "reports"
+    }
+  },
+  "reportSites": {
+    "isMaster": false,
+    "label": "Report Sites",
+    "dexieIndexes": "id, reportId, siteId, sortOrder",
+    "foreignKeys": { "reportId": "reports", "siteId": "sites" },
+    "syncMetaExtras": {
+      "items_attr": "report_sites",
+      "fk_mappings": { "site_id": "sites" },
+      "role_key_prefix": "site"
+    }
+  },
+  "reportClients": {
+    "isMaster": false,
+    "label": "Report Clients",
+    "dexieIndexes": "id, reportId, companyId, sortOrder",
+    "foreignKeys": { "reportId": "reports", "companyId": "companies" },
+    "syncMetaExtras": {
+      "items_attr": "report_clients",
+      "fk_mappings": { "company_id": "companies" },
+      "role_key_prefix": "client"
+    }
+  },
+  "reportWorkers": {
+    "isMaster": false,
+    "label": "Report Workers",
+    "dexieIndexes": "id, reportId, workerId, sortOrder",
+    "foreignKeys": { "reportId": "reports", "workerId": "workers" },
+    "syncMetaExtras": {
+      "items_attr": "report_workers",
+      "fk_mappings": { "worker_id": "workers" },
+      "role_key_prefix": "role",
+      "extra_fields_extractor_name": "_worker_role_extra"
+    }
+  },
+  "targetInstruments": {
+    "isMaster": false,
+    "label": "Target Instruments",
+    "dexieIndexes": "id, reportId, instrumentId, sortOrder",
+    "foreignKeys": { "reportId": "reports", "instrumentId": "instruments" },
+    "syncMetaExtras": {
+      "items_attr": "target_instruments",
+      "fk_mappings": { "instrument_id": "instruments", "schema_id": "schema_definitions" },
+      "extra_fields_extractor_name": "_target_instrument_extra",
+      "id_map_key": "target_instruments"
+    }
+  },
+  "targetInstrumentTables": {
+    "isMaster": false,
+    "label": "Target Instrument Tables",
+    "dexieIndexes": "id, targetInstrumentId, tableDefinitionId, reportId, sortOrder",
+    "foreignKeys": {
+      "targetInstrumentId": "targetInstruments",
+      "tableDefinitionId": "tableDefinitions",
+      "reportId": "reports"
+    },
+    "syncMetaExtras": {
+      "items_attr": "target_instrument_tables",
+      "fk_mappings": {
+        "target_instrument_id": "target_instruments",
+        "table_definition_id": "table_definitions"
+      },
+      "extra_fields_extractor_name": "_target_instrument_table_extra"
+    }
+  },
+  "usedParts": {
+    "isMaster": false,
+    "label": "Used Parts",
+    "dexieIndexes": "id, reportId, partId, sortOrder",
+    "foreignKeys": { "reportId": "reports", "partId": "parts" },
+    "syncMetaExtras": {
+      "items_attr": "used_parts",
+      "fk_mappings": { "part_id": "parts" },
+      "extra_fields_extractor_name": "_used_part_extra"
+    }
+  },
+  "reportOwnedInstruments": {
+    "isMaster": false,
+    "label": "Report Owned Instruments",
+    "dexieIndexes": "id, reportId, ownedInstrumentId",
+    "foreignKeys": { "reportId": "reports", "ownedInstrumentId": "ownedInstruments" },
+    "syncMetaExtras": {
+      "items_attr": "report_owned_instruments",
+      "fk_mappings": { "owned_instrument_id": "owned_instruments" }
+    }
+  }
+}

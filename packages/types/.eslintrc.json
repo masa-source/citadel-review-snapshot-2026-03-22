@@ -1,0 +1,4 @@
+{
+  "extends": ["@citadel/eslint-config/library.js"],
+  "ignorePatterns": ["dist/**", "node_modules/**"]
+}

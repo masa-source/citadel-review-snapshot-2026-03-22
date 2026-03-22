@@ -1,0 +1,24 @@
+# =============================================================================
+# Docker Compose 本番環境用オーバーライド設定（例）
+# =============================================================================
+# このファイルをコピーして docker-compose.override.yml を作成してください：
+#   copy docker-compose.override.yml.example docker-compose.override.yml
+#
+# docker-compose.override.yml は gitignore されており、AIエージェントからも見えません。
+# Docker Compose は自動的にこのファイルを読み込み、docker-compose.yml を上書きします。
+# =============================================================================
+
+services:
+  db:
+    environment:
+      # 本番用データベース設定（必ず変更してください）
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: <YOUR_STRONG_PASSWORD>
+      POSTGRES_DB: <YOUR_DB_NAME>
+    volumes:
+      # 本番用データは別のボリュームに保存（デモデータと分離）
+      - postgres_data_prod:/var/lib/postgresql/data
+
+volumes:
+  # 本番用データボリューム
+  postgres_data_prod:

@@ -1,0 +1,21 @@
+# 本ファイルはデプロイ・ロック用です。依存関係の追加は pyproject.toml にも行ってください。
+pydantic>=2.0.0
+xlwings>=0.30.0
+openpyxl>=3.1.0
+fastapi>=0.100.0
+uvicorn>=0.22.0
+python-multipart>=0.0.6
+# PostgreSQL 移行 (SQLModel, 非同期)
+sqlmodel>=0.0.14
+asyncpg>=0.29.0
+python-dotenv>=1.0.0
+pypdf>=4.0.0
+psutil>=5.9.0
+# Database migrations
+alembic>=1.18.0
+psycopg2-binary>=2.9.0
+# Error monitoring
+sentry-sdk[fastapi]>=2.0.0
+jinja2>=3.1.0
+defusedxml>=0.7.1
+openai>=1.0.0

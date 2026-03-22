@@ -1,0 +1,10 @@
+"""
+API エラー応答の code に使う定数。
+packages/types の ErrorCodes と値を一致させること（フロントの条件分岐と整合）。
+"""
+
+PURGED = "PURGED"
+FILE_MODIFIED_EXTERNALLY = "FILE_MODIFIED_EXTERNALLY"
+FILE_IN_USE = "FILE_IN_USE"
+BACKUP_FAILED = "BACKUP_FAILED"
+FILE_NOT_FOUND = "FILE_NOT_FOUND"

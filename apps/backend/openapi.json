@@ -1,0 +1,6960 @@
+{
+  "components": {
+    "schemas": {
+      "Body_auto_generate_template_api_templates_auto_generate_post": {
+        "properties": {
+          "file": {
+            "format": "binary",
+            "title": "File",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file",
+          "name"
+        ],
+        "title": "Body_auto_generate_template_api_templates_auto_generate_post",
+        "type": "object"
+      },
+      "Body_create_template_api_templates_post": {
+        "properties": {
+          "file": {
+            "format": "binary",
+            "title": "File",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file",
+          "name"
+        ],
+        "title": "Body_create_template_api_templates_post",
+        "type": "object"
+      },
+      "CompanyContext": {
+        "additionalProperties": true,
+        "properties": {
+          "address": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Address"
+          },
+          "department": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "email": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email"
+          },
+          "fax": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fax"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "phone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phone"
+          },
+          "postalCode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Postalcode"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "CompanyContext",
+        "type": "object"
+      },
+      "CompanyCreate": {
+        "description": "会社の新規作成用スキーマ。",
+        "properties": {
+          "address": {
+            "anyOf": [
+              {
+                "maxLength": 300,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Address"
+          },
+          "department": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "email": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email"
+          },
+          "fax": {
+            "anyOf": [
+              {
+                "maxLength": 20,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fax"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "phone": {
+            "anyOf": [
+              {
+                "maxLength": 20,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phone"
+          },
+          "postalCode": {
+            "anyOf": [
+              {
+                "maxLength": 10,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Postalcode"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "CompanyCreate",
+        "type": "object"
+      },
+      "CompanyInput": {
+        "properties": {
+          "address": {
+            "anyOf": [
+              {
+                "maxLength": 300,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Address"
+          },
+          "department": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Department"
+          },
+          "email": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email"
+          },
+          "fax": {
+            "anyOf": [
+              {
+                "maxLength": 20,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fax"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "phone": {
+            "anyOf": [
+              {
+                "maxLength": 20,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phone"
+          },
+          "postalCode": {
+            "anyOf": [
+              {
+                "maxLength": 10,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Postalcode"
+          }
+        },
+        "title": "CompanyInput",
+        "type": "object"
+      },
+      "DatabaseInput": {
+        "description": "フロントエンドから送信される db.json 互換のルート構造。",
+        "properties": {
+          "_mission": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mission"
+          },
+          "companies": {
+            "items": {
+              "$ref": "#/components/schemas/CompanyInput"
+            },
+            "title": "Companies",
+            "type": "array"
+          },
+          "instruments": {
+            "items": {
+              "$ref": "#/components/schemas/InstrumentInput"
+            },
+            "title": "Instruments",
+            "type": "array"
+          },
+          "ownedInstruments": {
+            "items": {
+              "$ref": "#/components/schemas/OwnedInstrumentInput"
+            },
+            "title": "Ownedinstruments",
+            "type": "array"
+          },
+          "parts": {
+            "items": {
+              "$ref": "#/components/schemas/PartInput"
+            },
+            "title": "Parts",
+            "type": "array"
+          },
+          "reportClients": {
+            "items": {
+              "$ref": "#/components/schemas/ReportClientInput"
+            },
+            "title": "Reportclients",
+            "type": "array"
+          },
+          "reportFormats": {
+            "items": {
+              "$ref": "#/components/schemas/ReportFormatInput"
+            },
+            "title": "Reportformats",
+            "type": "array"
+          },
+          "reportOwnedInstruments": {
+            "items": {
+              "$ref": "#/components/schemas/ReportOwnedInstrumentInput"
+            },
+            "title": "Reportownedinstruments",
+            "type": "array"
+          },
+          "reportSites": {
+            "items": {
+              "$ref": "#/components/schemas/ReportSiteInput"
+            },
+            "title": "Reportsites",
+            "type": "array"
+          },
+          "reportWorkers": {
+            "items": {
+              "$ref": "#/components/schemas/ReportWorkerInput"
+            },
+            "title": "Reportworkers",
+            "type": "array"
+          },
+          "reports": {
+            "items": {
+              "$ref": "#/components/schemas/ReportInput"
+            },
+            "title": "Reports",
+            "type": "array"
+          },
+          "schemaDefinitions": {
+            "items": {
+              "$ref": "#/components/schemas/SchemaDefinitionInput"
+            },
+            "title": "Schemadefinitions",
+            "type": "array"
+          },
+          "sites": {
+            "items": {
+              "$ref": "#/components/schemas/SiteInput"
+            },
+            "title": "Sites",
+            "type": "array"
+          },
+          "tableDefinitions": {
+            "items": {
+              "$ref": "#/components/schemas/TableDefinitionInput"
+            },
+            "title": "Tabledefinitions",
+            "type": "array"
+          },
+          "targetInstrumentTables": {
+            "items": {
+              "$ref": "#/components/schemas/TargetInstrumentTableInput"
+            },
+            "title": "Targetinstrumenttables",
+            "type": "array"
+          },
+          "targetInstruments": {
+            "items": {
+              "$ref": "#/components/schemas/TargetInstrumentInput"
+            },
+            "title": "Targetinstruments",
+            "type": "array"
+          },
+          "usedParts": {
+            "items": {
+              "$ref": "#/components/schemas/UsedPartInput"
+            },
+            "title": "Usedparts",
+            "type": "array"
+          },
+          "workers": {
+            "items": {
+              "$ref": "#/components/schemas/WorkerInput"
+            },
+            "title": "Workers",
+            "type": "array"
+          }
+        },
+        "title": "DatabaseInput",
+        "type": "object"
+      },
+      "ExportRequest": {
+        "description": "Scout へのカスタムデータエクスポート用リクエスト。",
+        "properties": {
+          "exportMode": {
+            "default": "edit",
+            "enum": [
+              "edit",
+              "copy"
+            ],
+            "title": "Exportmode",
+            "type": "string"
+          },
+          "includeCompanies": {
+            "default": true,
+            "title": "Includecompanies",
+            "type": "boolean"
+          },
+          "includeInstruments": {
+            "default": true,
+            "title": "Includeinstruments",
+            "type": "boolean"
+          },
+          "includeOwnedInstruments": {
+            "default": true,
+            "title": "Includeownedinstruments",
+            "type": "boolean"
+          },
+          "includeParts": {
+            "default": true,
+            "title": "Includeparts",
+            "type": "boolean"
+          },
+          "includeReportFormats": {
+            "default": true,
+            "title": "Includereportformats",
+            "type": "boolean"
+          },
+          "includeSchemaDefinitions": {
+            "default": true,
+            "title": "Includeschemadefinitions",
+            "type": "boolean"
+          },
+          "includeSites": {
+            "default": true,
+            "title": "Includesites",
+            "type": "boolean"
+          },
+          "includeTableDefinitions": {
+            "default": true,
+            "title": "Includetabledefinitions",
+            "type": "boolean"
+          },
+          "includeWorkers": {
+            "default": true,
+            "title": "Includeworkers",
+            "type": "boolean"
+          },
+          "permission": {
+            "default": "Collect",
+            "enum": [
+              "Collect",
+              "View",
+              "Edit",
+              "Copy"
+            ],
+            "title": "Permission",
+            "type": "string"
+          },
+          "targetReportIds": {
+            "default": [],
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "title": "Targetreportids",
+            "type": "array"
+          }
+        },
+        "title": "ExportRequest",
+        "type": "object"
+      },
+      "GridCellChange": {
+        "description": "簡易設計台：1セル分の変更。row/col は 0-based。",
+        "properties": {
+          "col": {
+            "title": "Col",
+            "type": "integer"
+          },
+          "row": {
+            "title": "Row",
+            "type": "integer"
+          },
+          "sheetName": {
+            "title": "Sheetname",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "sheetName",
+          "row",
+          "col"
+        ],
+        "title": "GridCellChange",
+        "type": "object"
+      },
+      "GridUpdateBody": {
+        "description": "簡易設計台：差分データ。force_overwrite: 外部でファイルが変更されていても上書き保存する場合に True。\nuse_excel_instance: True のとき Excel 本体(xlwings)で保存し画像・図形を保持。False のとき openpyxl で保存（デフォルト）。",
+        "properties": {
+          "changes": {
+            "items": {
+              "$ref": "#/components/schemas/GridCellChange"
+            },
+            "title": "Changes",
+            "type": "array"
+          },
+          "forceOverwrite": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Forceoverwrite"
+          },
+          "useExcelInstance": {
+            "default": false,
+            "title": "Useexcelinstance",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "changes"
+        ],
+        "title": "GridUpdateBody",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "InstrumentContext": {
+        "additionalProperties": true,
+        "properties": {
+          "company": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompanyContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "maintenanceCycle": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maintenancecycle"
+          },
+          "modelNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Modelnumber"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "InstrumentContext",
+        "type": "object"
+      },
+      "InstrumentCreate": {
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "maintenanceCycle": {
+            "anyOf": [
+              {
+                "maxLength": 50,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maintenancecycle"
+          },
+          "modelNumber": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Modelnumber"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "InstrumentCreate",
+        "type": "object"
+      },
+      "InstrumentInput": {
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "maintenanceCycle": {
+            "anyOf": [
+              {
+                "maxLength": 50,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Maintenancecycle"
+          },
+          "modelNumber": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Modelnumber"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          }
+        },
+        "title": "InstrumentInput",
+        "type": "object"
+      },
+      "MatchItemSchema": {
+        "description": "自動マッチング結果 1 件分。",
+        "properties": {
+          "col": {
+            "title": "Col",
+            "type": "integer"
+          },
+          "currentValue": {
+            "title": "Currentvalue",
+            "type": "string"
+          },
+          "placeholder": {
+            "title": "Placeholder",
+            "type": "string"
+          },
+          "row": {
+            "title": "Row",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "row",
+          "col",
+          "currentValue",
+          "placeholder"
+        ],
+        "title": "MatchItemSchema",
+        "type": "object"
+      },
+      "MatchScanRequest": {
+        "description": "プレースホルダ自動マッチング要求。",
+        "properties": {
+          "data": {
+            "items": {
+              "items": {},
+              "type": "array"
+            },
+            "title": "Data",
+            "type": "array"
+          },
+          "mergeCells": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/MergeCellRangeSchema"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mergecells"
+          },
+          "sheetName": {
+            "title": "Sheetname",
+            "type": "string"
+          },
+          "strategy": {
+            "default": "ordered",
+            "enum": [
+              "ordered",
+              "key",
+              "primary"
+            ],
+            "title": "Strategy",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sheetName",
+          "data"
+        ],
+        "title": "MatchScanRequest",
+        "type": "object"
+      },
+      "MergeCellRangeSchema": {
+        "description": "簡易設計台の結合セル情報（0-based）。",
+        "properties": {
+          "col": {
+            "title": "Col",
+            "type": "integer"
+          },
+          "colspan": {
+            "title": "Colspan",
+            "type": "integer"
+          },
+          "row": {
+            "title": "Row",
+            "type": "integer"
+          },
+          "rowspan": {
+            "title": "Rowspan",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "row",
+          "col",
+          "rowspan",
+          "colspan"
+        ],
+        "title": "MergeCellRangeSchema",
+        "type": "object"
+      },
+      "MissionHeartbeatRequest": {
+        "description": "任務ハートビートリクエスト。",
+        "properties": {
+          "deviceId": {
+            "title": "Deviceid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "deviceId"
+        ],
+        "title": "MissionHeartbeatRequest",
+        "type": "object"
+      },
+      "OwnedInstrumentContext": {
+        "additionalProperties": true,
+        "properties": {
+          "company": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompanyContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "instrument": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InstrumentContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instrumentid"
+          },
+          "instrumentType": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instrumenttype"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "OwnedInstrumentContext",
+        "type": "object"
+      },
+      "OwnedInstrumentCreate": {
+        "properties": {
+          "calAt": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calat"
+          },
+          "calNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calnumber"
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "equipmentName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Equipmentname"
+          },
+          "equipmentNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Equipmentnumber"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "instrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instrumentid"
+          },
+          "instrumentType": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instrumenttype"
+          },
+          "managementNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Managementnumber"
+          }
+        },
+        "title": "OwnedInstrumentCreate",
+        "type": "object"
+      },
+      "OwnedInstrumentInput": {
+        "properties": {
+          "calAt": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calat"
+          },
+          "calNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calnumber"
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "equipmentName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Equipmentname"
+          },
+          "equipmentNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Equipmentnumber"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "instrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instrumentid"
+          },
+          "instrumentType": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instrumenttype"
+          },
+          "managementNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Managementnumber"
+          }
+        },
+        "title": "OwnedInstrumentInput",
+        "type": "object"
+      },
+      "PartContext": {
+        "additionalProperties": true,
+        "properties": {
+          "category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category"
+          },
+          "company": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompanyContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "partNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Partnumber"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "PartContext",
+        "type": "object"
+      },
+      "PartCreate": {
+        "properties": {
+          "category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category"
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "partNumber": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Partnumber"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "PartCreate",
+        "type": "object"
+      },
+      "PartInput": {
+        "properties": {
+          "category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category"
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "partNumber": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Partnumber"
+          }
+        },
+        "title": "PartInput",
+        "type": "object"
+      },
+      "ReportClientInput": {
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 0,
+            "title": "Sortorder"
+          }
+        },
+        "title": "ReportClientInput",
+        "type": "object"
+      },
+      "ReportClientItemContext": {
+        "additionalProperties": true,
+        "properties": {
+          "company": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompanyContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sortorder"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "ReportClientItemContext",
+        "type": "object"
+      },
+      "ReportContextRoot": {
+        "additionalProperties": true,
+        "description": "レポートコンテキストのルート。\nリレーションを Pydantic モデルのリストとして持ち、\n@computed_field を通じて旧辞書互換の ByRole や Ordered キーを展開する。",
+        "properties": {
+          "company": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompanyContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "controlNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Controlnumber"
+          },
+          "createdAt": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Createdat"
+          },
+          "customData": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customdata"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "reportClientPrimary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ReportClientItemContext"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "readOnly": true
+          },
+          "reportClientsByCompanyId": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ReportClientItemContext"
+            },
+            "readOnly": true,
+            "title": "Reportclientsbycompanyid",
+            "type": "object"
+          },
+          "reportClientsByRole": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ReportClientItemContext"
+            },
+            "readOnly": true,
+            "title": "Reportclientsbyrole",
+            "type": "object"
+          },
+          "reportClientsOrdered": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ReportClientItemContext"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "readOnly": true,
+            "title": "Reportclientsordered",
+            "type": "array"
+          },
+          "reportOwnedInstrumentPrimary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ReportOwnedInstrumentItemContext"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "readOnly": true
+          },
+          "reportOwnedInstrumentsByOwnedInstrumentId": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ReportOwnedInstrumentItemContext"
+            },
+            "readOnly": true,
+            "title": "Reportownedinstrumentsbyownedinstrumentid",
+            "type": "object"
+          },
+          "reportOwnedInstrumentsByType": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/ReportOwnedInstrumentItemContext"
+              },
+              "type": "array"
+            },
+            "readOnly": true,
+            "title": "Reportownedinstrumentsbytype",
+            "type": "object"
+          },
+          "reportOwnedInstrumentsOrdered": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ReportOwnedInstrumentItemContext"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "readOnly": true,
+            "title": "Reportownedinstrumentsordered",
+            "type": "array"
+          },
+          "reportSitePrimary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ReportSiteItemContext"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "readOnly": true
+          },
+          "reportSitesByRole": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ReportSiteItemContext"
+            },
+            "readOnly": true,
+            "title": "Reportsitesbyrole",
+            "type": "object"
+          },
+          "reportSitesOrdered": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ReportSiteItemContext"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "readOnly": true,
+            "title": "Reportsitesordered",
+            "type": "array"
+          },
+          "reportSnapshot": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportsnapshot"
+          },
+          "reportTitle": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reporttitle"
+          },
+          "reportType": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reporttype"
+          },
+          "reportWorkerPrimary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ReportWorkerItemContext"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "readOnly": true
+          },
+          "reportWorkersByRole": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ReportWorkerItemContext"
+            },
+            "readOnly": true,
+            "title": "Reportworkersbyrole",
+            "type": "object"
+          },
+          "reportWorkersByWorkerId": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ReportWorkerItemContext"
+            },
+            "readOnly": true,
+            "title": "Reportworkersbyworkerid",
+            "type": "object"
+          },
+          "reportWorkersOrdered": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ReportWorkerItemContext"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "readOnly": true,
+            "title": "Reportworkersordered",
+            "type": "array"
+          },
+          "schemaId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Schemaid"
+          },
+          "targetInstrumentPrimary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TargetInstrumentContext"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "readOnly": true
+          },
+          "targetInstrumentsById": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/TargetInstrumentContext"
+            },
+            "readOnly": true,
+            "title": "Targetinstrumentsbyid",
+            "type": "object"
+          },
+          "targetInstrumentsByTagNumber": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/TargetInstrumentContext"
+            },
+            "readOnly": true,
+            "title": "Targetinstrumentsbytagnumber",
+            "type": "object"
+          },
+          "targetInstrumentsOrdered": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/TargetInstrumentContext"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "readOnly": true,
+            "title": "Targetinstrumentsordered",
+            "type": "array"
+          },
+          "updatedAt": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updatedat"
+          },
+          "usedPartPrimary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UsedPartItemContext"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "readOnly": true
+          },
+          "usedPartsByCategory": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/UsedPartItemContext"
+              },
+              "type": "array"
+            },
+            "readOnly": true,
+            "title": "Usedpartsbycategory",
+            "type": "object"
+          },
+          "usedPartsById": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/UsedPartItemContext"
+            },
+            "readOnly": true,
+            "title": "Usedpartsbyid",
+            "type": "object"
+          },
+          "usedPartsOrdered": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UsedPartItemContext"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "readOnly": true,
+            "title": "Usedpartsordered",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "reportSitesByRole",
+          "reportSitesOrdered",
+          "reportSitePrimary",
+          "reportClientsByCompanyId",
+          "reportClientsByRole",
+          "reportClientsOrdered",
+          "reportClientPrimary",
+          "reportWorkersByWorkerId",
+          "reportWorkersByRole",
+          "reportWorkersOrdered",
+          "reportWorkerPrimary",
+          "targetInstrumentsById",
+          "targetInstrumentsByTagNumber",
+          "targetInstrumentsOrdered",
+          "targetInstrumentPrimary",
+          "reportOwnedInstrumentsByOwnedInstrumentId",
+          "reportOwnedInstrumentsByType",
+          "reportOwnedInstrumentsOrdered",
+          "reportOwnedInstrumentPrimary",
+          "usedPartsById",
+          "usedPartsByCategory",
+          "usedPartsOrdered",
+          "usedPartPrimary"
+        ],
+        "title": "ReportContextRoot",
+        "type": "object"
+      },
+      "ReportFormatCreate": {
+        "description": "レポート種別の新規作成。",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "ReportFormatCreate",
+        "type": "object"
+      },
+      "ReportFormatInput": {
+        "description": "同期用レポート種別。id と name のみ。",
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          }
+        },
+        "title": "ReportFormatInput",
+        "type": "object"
+      },
+      "ReportFormatTemplateItem": {
+        "description": "種別に紐づくテンプレート 1 件（構成の追加・一括更新用）。",
+        "properties": {
+          "sortOrder": {
+            "minimum": 0.0,
+            "title": "Sortorder",
+            "type": "integer"
+          },
+          "templateId": {
+            "format": "uuid",
+            "title": "Templateid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "templateId",
+          "sortOrder"
+        ],
+        "title": "ReportFormatTemplateItem",
+        "type": "object"
+      },
+      "ReportFormatTemplatesUpdate": {
+        "description": "種別のテンプレート構成を一括更新。",
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ReportFormatTemplateItem"
+            },
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "title": "ReportFormatTemplatesUpdate",
+        "type": "object"
+      },
+      "ReportFormatUpdate": {
+        "description": "レポート種別の更新。",
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          }
+        },
+        "title": "ReportFormatUpdate",
+        "type": "object"
+      },
+      "ReportInput": {
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "controlNumber": {
+            "anyOf": [
+              {
+                "maxLength": 50,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Controlnumber"
+          },
+          "createdAt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Createdat"
+          },
+          "customData": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customdata"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "reportFormatId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportformatid"
+          },
+          "reportTitle": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reporttitle"
+          },
+          "schemaId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Schemaid"
+          }
+        },
+        "title": "ReportInput",
+        "type": "object"
+      },
+      "ReportListItem": {
+        "description": "レポート一覧表示用の軽量モデル。",
+        "properties": {
+          "companyName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyname"
+          },
+          "controlNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Controlnumber"
+          },
+          "createdAt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Createdat"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "reportFormatName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportformatname"
+          },
+          "reportTitle": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reporttitle"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "ReportListItem",
+        "type": "object"
+      },
+      "ReportOwnedInstrumentInput": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "ownedInstrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ownedinstrumentid"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 0,
+            "title": "Sortorder"
+          }
+        },
+        "title": "ReportOwnedInstrumentInput",
+        "type": "object"
+      },
+      "ReportOwnedInstrumentItemContext": {
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "ownedInstrument": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/OwnedInstrumentContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ownedInstrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ownedinstrumentid"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sortorder"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "ReportOwnedInstrumentItemContext",
+        "type": "object"
+      },
+      "ReportSiteInput": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          },
+          "siteId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Siteid"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 0,
+            "title": "Sortorder"
+          }
+        },
+        "title": "ReportSiteInput",
+        "type": "object"
+      },
+      "ReportSiteItemContext": {
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          },
+          "site": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SiteContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "siteId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Siteid"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sortorder"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "ReportSiteItemContext",
+        "type": "object"
+      },
+      "ReportWorkerInput": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 0,
+            "title": "Sortorder"
+          },
+          "workerId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workerid"
+          },
+          "workerRole": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workerrole"
+          }
+        },
+        "title": "ReportWorkerInput",
+        "type": "object"
+      },
+      "ReportWorkerItemContext": {
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sortorder"
+          },
+          "worker": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WorkerContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "workerId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workerid"
+          },
+          "workerRole": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workerrole"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "ReportWorkerItemContext",
+        "type": "object"
+      },
+      "SchemaDefinitionCreate": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "jsonSchema": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Jsonschema"
+          },
+          "targetEntity": {
+            "title": "Targetentity",
+            "type": "string"
+          },
+          "uiSchema": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Uischema"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "targetEntity",
+          "version"
+        ],
+        "title": "SchemaDefinitionCreate",
+        "type": "object"
+      },
+      "SchemaDefinitionInput": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "jsonSchema": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Jsonschema"
+          },
+          "targetEntity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Targetentity"
+          },
+          "uiSchema": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Uischema"
+          },
+          "version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Version"
+          }
+        },
+        "title": "SchemaDefinitionInput",
+        "type": "object"
+      },
+      "SiteContext": {
+        "additionalProperties": true,
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "SiteContext",
+        "type": "object"
+      },
+      "SiteCreate": {
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "maxLength": 1000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "maxLength": 300,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "SiteCreate",
+        "type": "object"
+      },
+      "SiteInput": {
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "maxLength": 1000,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "maxLength": 300,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          }
+        },
+        "title": "SiteInput",
+        "type": "object"
+      },
+      "TableDefinitionCreate": {
+        "properties": {
+          "columns": {
+            "anyOf": [
+              {
+                "items": {},
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Columns"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "TableDefinitionCreate",
+        "type": "object"
+      },
+      "TableDefinitionInput": {
+        "properties": {
+          "columns": {
+            "anyOf": [
+              {
+                "items": {},
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Columns"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          }
+        },
+        "title": "TableDefinitionInput",
+        "type": "object"
+      },
+      "TargetInstrumentContext": {
+        "additionalProperties": true,
+        "properties": {
+          "customData": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customdata"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "instrument": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/InstrumentContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "instrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instrumentid"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "schemaId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Schemaid"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sortorder"
+          },
+          "tablesByRole": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/TargetInstrumentTableItemContext"
+            },
+            "readOnly": true,
+            "title": "Tablesbyrole",
+            "type": "object"
+          },
+          "tablesOrdered": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/TargetInstrumentTableItemContext"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "readOnly": true,
+            "title": "Tablesordered",
+            "type": "array"
+          },
+          "tagNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tagnumber"
+          },
+          "targetInstrumentTables": {
+            "default": [],
+            "items": {
+              "$ref": "#/components/schemas/TargetInstrumentTableItemContext"
+            },
+            "title": "Targetinstrumenttables",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "tablesByRole",
+          "tablesOrdered"
+        ],
+        "title": "TargetInstrumentContext",
+        "type": "object"
+      },
+      "TargetInstrumentInput": {
+        "properties": {
+          "customData": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customdata"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "instrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instrumentid"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "schemaId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Schemaid"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 0,
+            "title": "Sortorder"
+          },
+          "tagNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tagnumber"
+          }
+        },
+        "title": "TargetInstrumentInput",
+        "type": "object"
+      },
+      "TargetInstrumentTableInput": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "items": {},
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 0,
+            "title": "Sortorder"
+          },
+          "tableDefinitionId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tabledefinitionid"
+          },
+          "targetInstrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Targetinstrumentid"
+          }
+        },
+        "title": "TargetInstrumentTableInput",
+        "type": "object"
+      },
+      "TargetInstrumentTableItemContext": {
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "roleKey": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rolekey"
+          },
+          "rows": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rows"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sortorder"
+          },
+          "tableDefinitionId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tabledefinitionid"
+          },
+          "targetInstrumentId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Targetinstrumentid"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "TargetInstrumentTableItemContext",
+        "type": "object"
+      },
+      "TemplateAutoGenerateReportItem": {
+        "description": "自動生成 API レスポンスのレポート部。",
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "reportTitle": {
+            "default": "",
+            "title": "Reporttitle",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "TemplateAutoGenerateReportItem",
+        "type": "object"
+      },
+      "TemplateAutoGenerateResponse": {
+        "description": "POST /api/templates/auto-generate のレスポンス。",
+        "properties": {
+          "report": {
+            "$ref": "#/components/schemas/TemplateAutoGenerateReportItem"
+          },
+          "template": {
+            "$ref": "#/components/schemas/TemplateAutoGenerateTemplateItem"
+          }
+        },
+        "required": [
+          "template",
+          "report"
+        ],
+        "title": "TemplateAutoGenerateResponse",
+        "type": "object"
+      },
+      "TemplateAutoGenerateTemplateItem": {
+        "description": "自動生成 API レスポンスのテンプレート部。",
+        "properties": {
+          "filePath": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Filepath"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "TemplateAutoGenerateTemplateItem",
+        "type": "object"
+      },
+      "TemplateRevalidateBody": {
+        "description": "外部編集後の再検証。ファイルが見つからない場合に new_file_path で再試行できる。\nバックアップ失敗時にユーザーが「続行」を選んだ場合は force_continue=True で再送する。",
+        "properties": {
+          "forceContinue": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Forcecontinue"
+          },
+          "newFilePath": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Newfilepath"
+          }
+        },
+        "title": "TemplateRevalidateBody",
+        "type": "object"
+      },
+      "TemplateScanMissingItem": {
+        "description": "スキャン結果：ディスクに存在しない DB レコード（行方不明）。",
+        "properties": {
+          "filePath": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Filepath"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "TemplateScanMissingItem",
+        "type": "object"
+      },
+      "TemplateScanResult": {
+        "description": "整合性スキャン結果。new_files は DB にないディスク上のファイル（相対パス）。",
+        "properties": {
+          "inconsistent": {
+            "default": false,
+            "title": "Inconsistent",
+            "type": "boolean"
+          },
+          "missingFromDisk": {
+            "items": {
+              "$ref": "#/components/schemas/TemplateScanMissingItem"
+            },
+            "title": "Missingfromdisk",
+            "type": "array"
+          },
+          "newFiles": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Newfiles",
+            "type": "array"
+          }
+        },
+        "title": "TemplateScanResult",
+        "type": "object"
+      },
+      "TemplateSyncFileInput": {
+        "description": "個別ファイル同期（インポート）のリクエスト。file_path は assets 基準の相対パス。",
+        "properties": {
+          "filePath": {
+            "title": "Filepath",
+            "type": "string"
+          }
+        },
+        "required": [
+          "filePath"
+        ],
+        "title": "TemplateSyncFileInput",
+        "type": "object"
+      },
+      "TemplateUpdate": {
+        "description": "テンプレート部品のメタデータ更新用スキーマ。種別・順序は ReportFormat 管理で行う。",
+        "properties": {
+          "filePath": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Filepath"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          }
+        },
+        "title": "TemplateUpdate",
+        "type": "object"
+      },
+      "UploadBeginRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "_mission": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mission"
+          },
+          "mode": {
+            "default": "copy",
+            "enum": [
+              "copy",
+              "overwrite"
+            ],
+            "title": "Mode",
+            "type": "string"
+          }
+        },
+        "title": "UploadBeginRequest",
+        "type": "object"
+      },
+      "UploadChunkRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "rows": {
+            "items": {},
+            "title": "Rows",
+            "type": "array"
+          },
+          "sequenceIndex": {
+            "title": "Sequenceindex",
+            "type": "integer"
+          },
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          },
+          "table": {
+            "default": "",
+            "title": "Table",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sessionId",
+          "sequenceIndex"
+        ],
+        "title": "UploadChunkRequest",
+        "type": "object"
+      },
+      "UploadCommitRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "sessionId": {
+            "title": "Sessionid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sessionId"
+        ],
+        "title": "UploadCommitRequest",
+        "type": "object"
+      },
+      "UsedPartInput": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "partId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Partid"
+          },
+          "quantity": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 0,
+            "title": "Quantity"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 0,
+            "title": "Sortorder"
+          }
+        },
+        "title": "UsedPartInput",
+        "type": "object"
+      },
+      "UsedPartItemContext": {
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "part": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PartContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "partId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Partid"
+          },
+          "quantity": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quantity"
+          },
+          "reportId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reportid"
+          },
+          "sortOrder": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sortorder"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "UsedPartItemContext",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "WorkerContext": {
+        "additionalProperties": true,
+        "properties": {
+          "company": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CompanyContext"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "sealImageUrl": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sealimageurl"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "WorkerContext",
+        "type": "object"
+      },
+      "WorkerCreate": {
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "sealImageUrl": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sealimageurl"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "title": "WorkerCreate",
+        "type": "object"
+      },
+      "WorkerInput": {
+        "properties": {
+          "companyId": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Companyid"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "sealImageUrl": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sealimageurl"
+          }
+        },
+        "title": "WorkerInput",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "現場報告管理システム Citadel のバックエンド API",
+    "title": "Citadel API",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/companies": {
+      "get": {
+        "operationId": "list_items_api_companies_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Items",
+        "tags": [
+          "companies"
+        ]
+      },
+      "post": {
+        "operationId": "create_item_api_companies_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Item",
+        "tags": [
+          "companies"
+        ]
+      }
+    },
+    "/api/companies/{item_id}": {
+      "delete": {
+        "operationId": "delete_item_api_companies__item_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Item",
+        "tags": [
+          "companies"
+        ]
+      },
+      "put": {
+        "operationId": "update_item_api_companies__item_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Item",
+        "tags": [
+          "companies"
+        ]
+      }
+    },
+    "/api/demo/clear": {
+      "delete": {
+        "description": "デモデータを削除する。\n[DEMO] プレフィックスを持つデータのみ削除。",
+        "operationId": "clear_demo_api_demo_clear_delete",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Clear Demo",
+        "tags": [
+          "demo"
+        ]
+      }
+    },
+    "/api/demo/seed": {
+      "post": {
+        "description": "デモデータを投入する。\n既存のデモデータがある場合は先に削除してから投入。",
+        "operationId": "seed_demo_api_demo_seed_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Seed Demo",
+        "tags": [
+          "demo"
+        ]
+      }
+    },
+    "/api/demo/status": {
+      "get": {
+        "description": "デモデータの状態を取得する。",
+        "operationId": "demo_status_api_demo_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Demo Status",
+        "tags": [
+          "demo"
+        ]
+      }
+    },
+    "/api/generate-excel": {
+      "post": {
+        "description": "report_id を受け取り、DB から関連データを取得し、Report に紐づくレポート種別\n(ReportFormat) に応じた複数テンプレートを個別 Excel として処理し、ZIP 圧縮して返す。",
+        "operationId": "generate_excel_api_generate_excel_post",
+        "parameters": [
+          {
+            "description": "出力対象のレポート ID",
+            "in": "query",
+            "name": "report_id",
+            "required": true,
+            "schema": {
+              "description": "出力対象のレポート ID",
+              "format": "uuid",
+              "title": "Report Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Generate Excel",
+        "tags": [
+          "reports"
+        ]
+      }
+    },
+    "/api/generate-report": {
+      "post": {
+        "description": "report_id を受け取り、DB から関連データを取得し、Report に紐づくレポート種別\n(ReportFormat) に応じた複数テンプレートを順に処理し、1 つの PDF に結合して返す。",
+        "operationId": "generate_report_api_generate_report_post",
+        "parameters": [
+          {
+            "description": "出力対象のレポート ID",
+            "in": "query",
+            "name": "report_id",
+            "required": true,
+            "schema": {
+              "description": "出力対象のレポート ID",
+              "format": "uuid",
+              "title": "Report Id",
+              "type": "string"
+            }
+          },
+          {
+            "description": "True の場合、Microsoft Print to PDF で印刷して PDF 出力（高画質）",
+            "in": "query",
+            "name": "use_printer",
+            "required": false,
+            "schema": {
+              "default": false,
+              "description": "True の場合、Microsoft Print to PDF で印刷して PDF 出力（高画質）",
+              "title": "Use Printer",
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Generate Report",
+        "tags": [
+          "reports"
+        ]
+      }
+    },
+    "/api/instruments": {
+      "get": {
+        "operationId": "list_items_api_instruments_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Items",
+        "tags": [
+          "instruments"
+        ]
+      },
+      "post": {
+        "operationId": "create_item_api_instruments_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstrumentCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Item",
+        "tags": [
+          "instruments"
+        ]
+      }
+    },
+    "/api/instruments/{item_id}": {
+      "delete": {
+        "operationId": "delete_item_api_instruments__item_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Item",
+        "tags": [
+          "instruments"
+        ]
+      },
+      "put": {
+        "operationId": "update_item_api_instruments__item_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstrumentInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Item",
+        "tags": [
+          "instruments"
+        ]
+      }
+    },
+    "/api/missions": {
+      "get": {
+        "description": "派遣中の任務一覧（管理画面用）。status 指定時はその状態の任務のみ。",
+        "operationId": "list_missions_api_missions_get",
+        "parameters": [
+          {
+            "description": "Active / Expired / Purged / Returned",
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Active / Expired / Purged / Returned",
+              "title": "Status"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Missions",
+        "tags": [
+          "missions"
+        ]
+      }
+    },
+    "/api/missions/{mission_id}/heartbeat": {
+      "post": {
+        "description": "任務のハートビート。Scout が「生存している」と報告する。\n利用停止/期限切れの場合は 403 と code: PURGED を返す。",
+        "operationId": "mission_heartbeat_api_missions__mission_id__heartbeat_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mission_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Mission Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MissionHeartbeatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Mission Heartbeat",
+        "tags": [
+          "missions"
+        ]
+      }
+    },
+    "/api/missions/{mission_id}/purge": {
+      "post": {
+        "description": "任務を利用停止（Purge）する。派遣名簿から削除し、該当 Scout は次回同期で 403 を受ける。",
+        "operationId": "mission_purge_api_missions__mission_id__purge_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mission_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Mission Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Mission Purge",
+        "tags": [
+          "missions"
+        ]
+      }
+    },
+    "/api/missions/{mission_id}/status": {
+      "get": {
+        "description": "任務の状態を取得（Admin のファイルインポート時など）。",
+        "operationId": "mission_status_api_missions__mission_id__status_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "mission_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Mission Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Mission Status",
+        "tags": [
+          "missions"
+        ]
+      }
+    },
+    "/api/owned-instruments": {
+      "get": {
+        "operationId": "list_items_api_owned_instruments_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Items",
+        "tags": [
+          "owned-instruments"
+        ]
+      },
+      "post": {
+        "operationId": "create_item_api_owned_instruments_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OwnedInstrumentCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Item",
+        "tags": [
+          "owned-instruments"
+        ]
+      }
+    },
+    "/api/owned-instruments/{item_id}": {
+      "delete": {
+        "operationId": "delete_item_api_owned_instruments__item_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Item",
+        "tags": [
+          "owned-instruments"
+        ]
+      },
+      "put": {
+        "operationId": "update_item_api_owned_instruments__item_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OwnedInstrumentInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Item",
+        "tags": [
+          "owned-instruments"
+        ]
+      }
+    },
+    "/api/parts": {
+      "get": {
+        "operationId": "list_items_api_parts_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Items",
+        "tags": [
+          "parts"
+        ]
+      },
+      "post": {
+        "operationId": "create_item_api_parts_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Item",
+        "tags": [
+          "parts"
+        ]
+      }
+    },
+    "/api/parts/{item_id}": {
+      "delete": {
+        "operationId": "delete_item_api_parts__item_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Item",
+        "tags": [
+          "parts"
+        ]
+      },
+      "put": {
+        "operationId": "update_item_api_parts__item_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PartInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Item",
+        "tags": [
+          "parts"
+        ]
+      }
+    },
+    "/api/report-formats": {
+      "get": {
+        "description": "レポート種別一覧を返す。Scout の報告書種別ドロップダウン等で使用。",
+        "operationId": "list_report_formats_api_report_formats_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Report Formats",
+        "tags": [
+          "report-formats"
+        ]
+      },
+      "post": {
+        "description": "レポート種別を 1 件作成。id は UUID で自動生成。",
+        "operationId": "create_report_format_api_report_formats_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportFormatCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Report Format",
+        "tags": [
+          "report-formats"
+        ]
+      }
+    },
+    "/api/report-formats/{format_id}": {
+      "delete": {
+        "description": "レポート種別とそのテンプレート構成を削除。",
+        "operationId": "delete_report_format_api_report_formats__format_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "format_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Format Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Report Format",
+        "tags": [
+          "report-formats"
+        ]
+      },
+      "put": {
+        "description": "レポート種別の名前を更新。",
+        "operationId": "update_report_format_api_report_formats__format_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "format_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Format Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportFormatUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Report Format",
+        "tags": [
+          "report-formats"
+        ]
+      }
+    },
+    "/api/report-formats/{format_id}/templates": {
+      "get": {
+        "description": "指定したレポート種別に紐づくテンプレート部品を sort_order 順で返す。",
+        "operationId": "get_format_templates_api_report_formats__format_id__templates_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "format_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Format Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Format Templates",
+        "tags": [
+          "report-formats"
+        ]
+      },
+      "put": {
+        "description": "指定したレポート種別のテンプレート構成を一括更新。既存の紐づけは削除し、body で指定した並びで再登録。",
+        "operationId": "update_format_templates_api_report_formats__format_id__templates_put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "format_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Format Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportFormatTemplatesUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Format Templates",
+        "tags": [
+          "report-formats"
+        ]
+      }
+    },
+    "/api/reports": {
+      "get": {
+        "description": "レポート一覧を取得。会社名を JOIN して返す。作成日の降順でソート。",
+        "operationId": "get_reports_api_reports_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ReportListItem"
+                  },
+                  "title": "Response Get Reports Api Reports Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Reports",
+        "tags": [
+          "reports"
+        ]
+      }
+    },
+    "/api/reports/{report_id}": {
+      "delete": {
+        "description": "指定IDのレポートを削除。関連データを子から親の順でカスケード削除する。",
+        "operationId": "delete_report_api_reports__report_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "report_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Report Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Report",
+        "tags": [
+          "reports"
+        ]
+      }
+    },
+    "/api/reports/{report_id}/complete": {
+      "post": {
+        "description": "レポートを「完了」にする。完了時点のコンテキストを report_snapshot に保存する。\n以降の PDF/Excel 出力ではスナップショットを使用するため、マスタ変更の影響を受けない。",
+        "operationId": "complete_report_api_reports__report_id__complete_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "report_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Report Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Complete Report",
+        "tags": [
+          "reports"
+        ]
+      }
+    },
+    "/api/reports/{report_id}/context": {
+      "get": {
+        "description": "指定レポートIDのデータをロードし、レポートコンテキストをそのまま返す。プレースホルダ生成ツール用。",
+        "operationId": "get_report_context_api_reports__report_id__context_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "report_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Report Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportContextRoot"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Report Context",
+        "tags": [
+          "reports"
+        ]
+      }
+    },
+    "/api/reports/{report_id}/match-scan": {
+      "post": {
+        "description": "指定レポートのコンテキストとシートのセル値から、自動マッチング候補を返す。",
+        "operationId": "run_report_match_scan_api_reports__report_id__match_scan_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "report_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Report Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchScanRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/MatchItemSchema"
+                  },
+                  "title": "Response Run Report Match Scan Api Reports  Report Id  Match Scan Post",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Run Report Match Scan",
+        "tags": [
+          "reports"
+        ]
+      }
+    },
+    "/api/schema-definitions": {
+      "get": {
+        "operationId": "list_items_api_schema_definitions_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Items",
+        "tags": [
+          "schema-definitions"
+        ]
+      },
+      "post": {
+        "operationId": "create_item_api_schema_definitions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaDefinitionCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Item",
+        "tags": [
+          "schema-definitions"
+        ]
+      }
+    },
+    "/api/schema-definitions/{item_id}": {
+      "delete": {
+        "operationId": "delete_item_api_schema_definitions__item_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Item",
+        "tags": [
+          "schema-definitions"
+        ]
+      },
+      "put": {
+        "operationId": "update_item_api_schema_definitions__item_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchemaDefinitionInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Item",
+        "tags": [
+          "schema-definitions"
+        ]
+      }
+    },
+    "/api/sites": {
+      "get": {
+        "operationId": "list_items_api_sites_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Items",
+        "tags": [
+          "sites"
+        ]
+      },
+      "post": {
+        "operationId": "create_item_api_sites_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Item",
+        "tags": [
+          "sites"
+        ]
+      }
+    },
+    "/api/sites/{item_id}": {
+      "delete": {
+        "operationId": "delete_item_api_sites__item_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Item",
+        "tags": [
+          "sites"
+        ]
+      },
+      "put": {
+        "operationId": "update_item_api_sites__item_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SiteInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Item",
+        "tags": [
+          "sites"
+        ]
+      }
+    },
+    "/api/sync/delta": {
+      "get": {
+        "description": "差分同期: 指定日時以降に更新されたレポートとその関連データを取得。\n\n- since: この日時以降に更新されたデータを取得（ISO 8601形式）\n- include_master: Trueの場合、マスタデータも全件含める\n\nレスポンスには `_meta` フィールドが含まれ、同期情報を提供します。",
+        "operationId": "delta_sync_api_sync_delta_get",
+        "parameters": [
+          {
+            "description": "ISO 8601形式の日時（例: 2024-01-01T00:00:00Z）",
+            "in": "query",
+            "name": "since",
+            "required": true,
+            "schema": {
+              "description": "ISO 8601形式の日時（例: 2024-01-01T00:00:00Z）",
+              "title": "Since",
+              "type": "string"
+            }
+          },
+          {
+            "description": "マスタデータも含めるか",
+            "in": "query",
+            "name": "include_master",
+            "required": false,
+            "schema": {
+              "default": false,
+              "description": "マスタデータも含めるか",
+              "title": "Include Master",
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delta Sync",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/delta/stream": {
+      "get": {
+        "description": "差分同期を NDJSON でストリーミング配信する。\n各行は {\"table\": \"テーブル名\", \"rows\": [...]}。最後に type: \"meta\" の行で reportCount 等を送る。",
+        "operationId": "delta_sync_stream_api_sync_delta_stream_get",
+        "parameters": [
+          {
+            "description": "ISO 8601形式の日時（例: 2024-01-01T00:00:00Z）",
+            "in": "query",
+            "name": "since",
+            "required": true,
+            "schema": {
+              "description": "ISO 8601形式の日時（例: 2024-01-01T00:00:00Z）",
+              "title": "Since",
+              "type": "string"
+            }
+          },
+          {
+            "description": "マスタデータも含めるか",
+            "in": "query",
+            "name": "include_master",
+            "required": false,
+            "schema": {
+              "default": false,
+              "description": "マスタデータも含めるか",
+              "title": "Include Master",
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delta Sync Stream",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/download": {
+      "get": {
+        "description": "全データを db.json 形式でエクスポートし、JSON ファイルとしてダウンロードさせる。\nScout (現場アプリ) へのデータ同期用。",
+        "operationId": "download_sync_data_api_sync_download_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Download Sync Data",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/download/stream": {
+      "get": {
+        "description": "全データを NDJSON 形式でストリーミング配信する。\n各行は {\"table\": \"テーブル名\", \"rows\": [...]}。メモリを抑えた真のストリーミング。\nストリーム完了までセッションを保持するため、Depends(get_session) は使わず\nイテレータ内で async_session_maker によりセッションを開く。",
+        "operationId": "download_sync_data_stream_api_sync_download_stream_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Download Sync Data Stream",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/export": {
+      "post": {
+        "description": "カスタム条件でデータをエクスポートし、JSON ファイルとしてダウンロードさせる。\n- マスタ: 選択されたテーブルのみ出力\n- レポート: 指定IDのレポートのみ出力\n- モード: edit（ID維持）or copy（IDクリア）",
+        "operationId": "export_custom_sync_data_api_sync_export_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExportRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Export Custom Sync Data",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/handoff": {
+      "post": {
+        "description": "Direct Handoff: エクスポートとステージングを一度に行う。\nAdmin → Scout への直接転送用。任務（Mission + MissionReport）を発行し、_mission メタデータを付与する。",
+        "operationId": "direct_handoff_api_sync_handoff_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExportRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Direct Handoff",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/stage": {
+      "post": {
+        "description": "Scout への直接転送用にデータを一時保存する。\nユニークな ticket_id を発行して返す。",
+        "operationId": "stage_data_api_sync_stage_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatabaseInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Stage Data",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/stage/{ticket_id}": {
+      "get": {
+        "description": "ステージングされたデータを取得する。\n取得後、ファイルは削除される（ワンタイム）。",
+        "operationId": "get_staged_data_api_sync_stage__ticket_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "schema": {
+              "title": "Ticket Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Staged Data",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/upload": {
+      "post": {
+        "description": "db.json 形式の JSON を受け取り、PostgreSQL に保存する。\nbody に _mission が含まれる場合、任務状態を確認し Purged/Expired なら 403 を返す。\nmode=copy（デフォルト）: レポートは新規UUIDで保存。mode=overwrite: 入力のidが既存なら削除後に同一IDで再登録。\n1 回のリクエストは 1 トランザクション。失敗時はロールバック。",
+        "operationId": "upload_data_api_sync_upload_post",
+        "parameters": [
+          {
+            "description": "copy: 新規保存（ID再採番）。overwrite: 同一IDのレポートを上書き。",
+            "in": "query",
+            "name": "mode",
+            "required": false,
+            "schema": {
+              "default": "copy",
+              "description": "copy: 新規保存（ID再採番）。overwrite: 同一IDのレポートを上書き。",
+              "enum": [
+                "copy",
+                "overwrite"
+              ],
+              "title": "Mode",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DatabaseInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Data",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/upload/begin": {
+      "post": {
+        "description": "アップロードセッションを開始する。sessionId と expectedOrder を返す。\n_mission が渡され且つ Purged/Expired の場合は 403 を返す。",
+        "operationId": "upload_begin_api_sync_upload_begin_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadBeginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Begin",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/upload/chunk": {
+      "post": {
+        "description": "セッションにチャンクを保存する。sequenceIndex は 0 始まりで順番に送ること。\n同一 sequenceIndex の再送は冪等（上書き保存）。",
+        "operationId": "upload_chunk_api_sync_upload_chunk_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadChunkRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Chunk",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/upload/commit": {
+      "post": {
+        "description": "全チャンクを結合して run_import を実行し、成功時にセッションを削除する。",
+        "operationId": "upload_commit_api_sync_upload_commit_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadCommitRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Commit",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/sync/upload/sessions/{session_id}/status": {
+      "get": {
+        "description": "セッションの受信状況を返す。レジューム時に「次に送るべき sequenceIndex」の判定に利用。",
+        "operationId": "upload_session_status_api_sync_upload_sessions__session_id__status_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session_id",
+            "required": true,
+            "schema": {
+              "title": "Session Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Upload Session Status",
+        "tags": [
+          "sync"
+        ]
+      }
+    },
+    "/api/table-definitions": {
+      "get": {
+        "operationId": "list_items_api_table_definitions_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Items",
+        "tags": [
+          "table-definitions"
+        ]
+      },
+      "post": {
+        "operationId": "create_item_api_table_definitions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TableDefinitionCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Item",
+        "tags": [
+          "table-definitions"
+        ]
+      }
+    },
+    "/api/table-definitions/{item_id}": {
+      "delete": {
+        "operationId": "delete_item_api_table_definitions__item_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Item",
+        "tags": [
+          "table-definitions"
+        ]
+      },
+      "put": {
+        "operationId": "update_item_api_table_definitions__item_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TableDefinitionInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Item",
+        "tags": [
+          "table-definitions"
+        ]
+      }
+    },
+    "/api/templates": {
+      "get": {
+        "description": "ReportTemplate（テンプレート部品）の一覧を返す。fileExists は実ファイルの存在を示す。",
+        "operationId": "get_templates_api_templates_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Templates",
+        "tags": [
+          "templates"
+        ]
+      },
+      "post": {
+        "description": "ブックバインダー：.xlsx を検疫し、通過したもののみ assets/templates に登録する（テンプレート部品として）。",
+        "operationId": "create_template_api_templates_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_create_template_api_templates_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Template",
+        "tags": [
+          "templates"
+        ]
+      }
+    },
+    "/api/templates/auto-generate": {
+      "post": {
+        "description": "テンプレート .xlsx をアップロードし、AI でレポート情報を抽出したうえで\nプレースホルダを自動配置し、テンプレート部品として登録する。",
+        "operationId": "auto_generate_template_api_templates_auto_generate_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_auto_generate_template_api_templates_auto_generate_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateAutoGenerateResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Auto Generate Template",
+        "tags": [
+          "templates"
+        ]
+      }
+    },
+    "/api/templates/scan": {
+      "get": {
+        "description": "テンプレートディレクトリ（TEMPLATE_DIR）内の .xlsx と DB の file_path を比較し、\nDB にないファイル（新規）とディスクにない DB レコード（行方不明）を返す。",
+        "operationId": "scan_templates_api_templates_scan_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateScanResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Scan Templates",
+        "tags": [
+          "templates"
+        ]
+      }
+    },
+    "/api/templates/sync-file": {
+      "post": {
+        "description": "指定した file_path（assets 基準の相対パス）のファイルを検疫し、\n通過した場合のみ DB に ReportTemplate を 1 件作成する。",
+        "operationId": "sync_file_template_api_templates_sync_file_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateSyncFileInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Sync File Template",
+        "tags": [
+          "templates"
+        ]
+      }
+    },
+    "/api/templates/{template_id}": {
+      "delete": {
+        "description": "指定IDのテンプレート部品をDBとファイルシステムから削除する。紐づく ReportFormatTemplate も削除。",
+        "operationId": "delete_template_api_templates__template_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Template Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Template",
+        "tags": [
+          "templates"
+        ]
+      },
+      "put": {
+        "description": "指定IDのテンプレート部品のメタデータを更新する（ファイルは変更しない）。",
+        "operationId": "update_template_api_templates__template_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Template Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Template",
+        "tags": [
+          "templates"
+        ]
+      }
+    },
+    "/api/templates/{template_id}/grid": {
+      "get": {
+        "description": "簡易設計台：テンプレートの全シートのセル値（0-based グリッド）を返す。",
+        "operationId": "get_template_grid_api_templates__template_id__grid_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Template Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Template Grid",
+        "tags": [
+          "templates"
+        ]
+      },
+      "post": {
+        "description": "簡易設計台：差分データを受け取り、該当セルの値のみ更新してファイルを上書き保存する。",
+        "operationId": "update_template_grid_api_templates__template_id__grid_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Template Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GridUpdateBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Template Grid",
+        "tags": [
+          "templates"
+        ]
+      }
+    },
+    "/api/templates/{template_id}/revalidate": {
+      "post": {
+        "description": "外部編集モード用。物理ファイルの存在確認・検疫を行い、問題なければ更新日時を返す。\nファイルがロックされている場合（Excel で開いている等）は 400 を返す。\nファイルが見つからない場合は new_file_path で再試行できる。",
+        "operationId": "revalidate_template_api_templates__template_id__revalidate_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "template_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Template Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateRevalidateBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Revalidate Template",
+        "tags": [
+          "templates"
+        ]
+      }
+    },
+    "/api/workers": {
+      "get": {
+        "operationId": "list_items_api_workers_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "List Items",
+        "tags": [
+          "workers"
+        ]
+      },
+      "post": {
+        "operationId": "create_item_api_workers_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkerCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Item",
+        "tags": [
+          "workers"
+        ]
+      }
+    },
+    "/api/workers/{item_id}": {
+      "delete": {
+        "operationId": "delete_item_api_workers__item_id__delete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Delete Item",
+        "tags": [
+          "workers"
+        ]
+      },
+      "put": {
+        "operationId": "update_item_api_workers__item_id__put",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Item Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkerInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Item",
+        "tags": [
+          "workers"
+        ]
+      }
+    }
+  }
+}

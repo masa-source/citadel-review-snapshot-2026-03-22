@@ -1,0 +1,11 @@
+{
+  "name": "@citadel/typescript-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Citadel モノレポ共通 TypeScript 設定",
+  "files": [
+    "base.json",
+    "library.json",
+    "react-library.json"
+  ]
+}

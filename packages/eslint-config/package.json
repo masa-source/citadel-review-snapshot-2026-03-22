@@ -1,0 +1,25 @@
+{
+  "name": "@citadel/eslint-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Citadel モノレポ共通 ESLint 設定",
+  "main": "base.js",
+  "files": [
+    "base.js",
+    "library.js",
+    "vite-react.js",
+    "vite-react-import.js"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^8.57.1",
+    "eslint-import-resolver-typescript": "^3.10.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1"
+  },
+  "peerDependencies": {
+    "eslint": "^8"
+  }
+}
